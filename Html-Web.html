@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="qr.png" type="image/x-icon">
+</head>
+
+<body>
+
+<!-- Loading Screen -->
+    <div id="loadingScreen">
+        <h1>Tunggu Sebentar...</h1>
+    </div>
+    
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <p>Masukin linknya brow..</p>
+        <input type="text" id="linkInput" placeholder="Paste link di sini">
+        <button onclick="generateQRCode()">Generate QR Code</button>
+
+        <div>
+            <p id="guideText" style="cursor: pointer; color: blue; display: inline;" onclick="showGuide()">Panduan</p>
+            
+        </div>
+
+        <!-- Pop-up untuk panduan -->
+        <div id="guidePopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closeGuide()">&times;</span>
+                <h2>Panduan Penggunaan QR Code Generator</h2>
+                <p>1. Masukkan link yang ingin kamu konversi menjadi QR Code di kolom input.</p>
+                <p>2. Klik tombol "Generate QR Code" untuk menghasilkan QR Code.</p>
+                <p>3. Kamu dapat mendownload QR Code tersebut dalam format gambar PNG dengan mengklik tombol download
+                    yang muncul setelah QR Code dihasilkan.</p>
+            </div>
+        </div>
+
+        <div id="qrcode"></div>
+        <button id="downloadBtn" style="display:none;" onclick="downloadQRCode()">Download QR Code</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
